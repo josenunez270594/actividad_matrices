@@ -1,0 +1,38 @@
+mtz_abecedario = [['A','B','C','D','E','F'],
+                  ['G','H','I','J','K','L'],
+                  ['M','N','Ñ','O','P','Q'],
+                  ['R','S','T','U','V','W'],
+                  ['X','Y','Z','CH','LL','RR']]
+dato = 0
+mtz_completar = [['🕳','🕳','🕳','🕳','🕳','🕳'],
+                  ['🕳','🕳','🕳','🕳','🕳','🕳'],
+                  ['🕳','🕳','🕳','🕳','🕳','🕳'],
+                  ['🕳','🕳','🕳','🕳','🕳','🕳'],
+                  ['🕳','🕳','🕳','🕳','🕳','🕳']]
+import os
+def fnt_limpiar(dato,fila,columna):
+    os.system('cls')
+    print('JOSE DANIEL NUÑEZ ARENAS\n\nEjercicio 5 matriz')
+def fnt_find():
+    for i in range(len(mtz_abecedario)):
+        for j in range(len(mtz_abecedario[i])):
+            if dato == mtz_abecedario[fila][columna]:
+                mtz_completar[fila][columna] = dato
+                input(f'agregado correctamente')
+                salir = True
+                break
+            else:
+                input('No se encontro')
+                salir = True
+                break
+        if salir == True:
+            break
+def fnt_imprimir():
+    for i in range(len(mtz_completar)):
+        for j in range(len(mtz_completar[i])):
+            print(mtz_completar[i][j], end='  ')
+        print()
+while True:
+    fnt_limpiar()
+    fnt_imprimir()
+    fnt_find(input('dato: ').upper(),int(input('fila: ')),int(input('columna: ')))
